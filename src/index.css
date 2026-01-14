@@ -80,6 +80,12 @@ ul {
   padding: 0 2rem;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
 .section {
   padding: 6rem 0;
 }

@@ -113,26 +113,47 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        /* Center text for better mobile reading */
         gap: 2rem;
+        padding: 1.5rem;
+        /* Add padding to card if needed, or around item */
+        background-color: var(--card-bg);
+        /* Maybe add bg for separate feel on mobile? Optional. Let's keep transparent as per design, but maybe add border or just spacing. */
+        border-radius: 12px;
+        /* If bg added */
+        border: 1px solid var(--border-color);
+        /* Add border to separate projects on mobile */
     }
 
     .project-image-container {
         width: 100%;
-        max-width: 300px;
-        height: 300px;
+        max-width: 100%;
+        /* Create full width image on mobile card */
+        height: auto;
+        aspect-ratio: 16/9;
+        /* Better for screenshots */
     }
 
     .project-details {
         align-items: center;
+        width: 100%;
     }
 
     .project-tech {
         flex-direction: column;
-        gap: 0.25rem;
+        gap: 0.5rem;
         margin-bottom: 1.5rem;
+        align-items: center;
     }
 
     .project-buttons {
         justify-content: center;
+        width: 100%;
+    }
+
+    .btn-project {
+        width: 100%;
+        text-align: center;
+        max-width: 200px;
     }
 }

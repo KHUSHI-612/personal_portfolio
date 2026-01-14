@@ -40,3 +40,15 @@
     color: var(--accent-color);
     transform: translateY(-3px);
 }
+
+@media (max-width: 768px) {
+    .contact-desc {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+}

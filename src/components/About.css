@@ -71,6 +71,8 @@
 
 @media (max-width: 968px) {
     .about-content-wrapper {
+        flex-direction: column-reverse;
+        /* Put image on top or stay column? Let's try standard column with image first if desired, but user didn't specify. Standard is usually content then image or vice versa. Let's keep column, but maybe ensure image is visible. The original code had column. Let's stick to it but ensure sizing is correct. */
         flex-direction: column;
         text-align: left;
         gap: 3rem;
@@ -79,19 +81,39 @@
     .about-image-column {
         justify-content: center;
         width: 100%;
+        margin-top: 2rem;
     }
 
     .profile-image-wrapper {
         width: 100%;
-        max-width: 350px;
-        height: 400px;
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 4/5;
     }
 
     .about-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        text-align: center;
+        /* Center title on mobile for better look */
+        width: 100%;
+    }
+
+    .about-text-column {
+        max-width: 100%;
     }
 
     .about-description {
         font-size: 1.1rem;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .profile-image-wrapper {
+        max-width: 280px;
     }
 }

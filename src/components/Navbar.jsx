@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
+import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -14,26 +16,42 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+        document.body.style.overflow = !mobileMenuOpen ? 'hidden' : 'auto';
+    };
+
+    const closeMobileMenu = () => {
+        setMobileMenuOpen(false);
+        document.body.style.overflow = 'auto';
+    };
+
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container nav-content">
+                <div className="logo-container">
+                    {/* You can add a logo here if needed, or keep it empty/text */}
+                </div>
 
-                <ul className="nav-links">
-                    <li>
-                        <Link to="hero" smooth={true} duration={800} offset={-80}>Home</Link>
-                    </li>
-                    <li>
-                        <Link to="about" smooth={true} duration={800} offset={-80}>About</Link>
-                    </li>
-                    <li>
-                        <Link to="projects" smooth={true} duration={800} offset={-80}>Projects</Link>
-                    </li>
+                <div className="mobile-menu-btn" onClick={toggleMobileMenu}>
+                    {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                </div>
 
+                <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
                     <li>
-                        <Link to="skills" smooth={true} duration={800} offset={-80}>Skills</Link>
+                        <Link to="hero" smooth={true} duration={800} offset={-80} onClick={closeMobileMenu}>Home</Link>
                     </li>
                     <li>
-                        <Link to="contact" smooth={true} duration={800} offset={-80}>Contact</Link>
+                        <Link to="about" smooth={true} duration={800} offset={-80} onClick={closeMobileMenu}>About</Link>
+                    </li>
+                    <li>
+                        <Link to="projects" smooth={true} duration={800} offset={-80} onClick={closeMobileMenu}>Projects</Link>
+                    </li>
+                    <li>
+                        <Link to="skills" smooth={true} duration={800} offset={-80} onClick={closeMobileMenu}>Skills</Link>
+                    </li>
+                    <li>
+                        <Link to="contact" smooth={true} duration={800} offset={-80} onClick={closeMobileMenu}>Contact</Link>
                     </li>
                 </ul>
             </div>
