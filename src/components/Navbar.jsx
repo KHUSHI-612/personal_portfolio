@@ -30,7 +30,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container nav-content">
                 <div className="logo-container">
-                    {/* You can add a logo here if needed, or keep it empty/text */}
+                 
                 </div>
 
                 <div className="mobile-menu-btn" onClick={toggleMobileMenu}>
@@ -54,6 +54,15 @@ const Navbar = () => {
                         <Link to="contact" smooth={true} duration={800} offset={-80} onClick={closeMobileMenu}>Contact</Link>
                     </li>
                 </ul>
+
+                <a
+                    href="https://drive.google.com/file/d/1XucTb0dqqltc7FfJcV3pyrr67EAOdQDt/view?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="resume-btn"
+                >
+                    Resume
+                </a>
             </div>
         </nav>
     );

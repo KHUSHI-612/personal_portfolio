@@ -1,77 +1,88 @@
 .skills-section {
     padding: 100px 0;
-    color: var(--text-primary);
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 4rem;
-    padding: 0 1rem;
-}
-
-.skill-category {
-    background-color: transparent;
-
-    padding: 0;
-    border-radius: 12px;
-    border: none;
-    transition: none;
-}
-
-.skill-category:hover {
-    transform: none;
-    border-color: transparent;
-}
-
-.category-title {
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-    color: #3b82f6;
-
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 0.5rem;
-    display: inline-block;
-}
-
-.skills-list {
+    min-height: 80vh;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    
 }
 
-.skill-item {
-    background-color: transparent;
+.skills-container {
+    width: 100%;
+    max-width: 100%;
+
     padding: 0;
-    border-radius: 0;
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    border: none;
-    transition: color 0.3s ease;
-    font-weight: 300;
 }
 
-.skill-item:hover {
-    background-color: transparent;
-    color: #3b82f6;
+.section-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+  
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.skills-marquee {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    /* Significantly increased spacing */
+    width: 100%;
+}
+
+.skill-line-wrapper {
+    width: 100%;
+    overflow: visible;
+
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+
+}
+
+.skill-line {
+    white-space: nowrap;
+    font-size: 3.5rem;
+
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 2px;
+    font-family: 'Inter', sans-serif;
+
+    will-change: transform, color;
     cursor: default;
 }
 
+@media (min-width: 1200px) {
+    .skill-line {
+        font-size: 4vw;
+    
+    }
+}
+
 @media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .skill-line {
+        font-size: 2.5rem;
+
     }
 
-    .category-title {
-        font-size: 1.1rem;
+    .skills-section {
+        padding: 50px 0;
+        min-height: auto;
     }
 
-    .skill-item {
-        font-size: 1rem;
+    .skills-marquee {
+        gap: 3rem;
     }
 }

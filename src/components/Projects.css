@@ -8,12 +8,14 @@
     font-size: 2.5rem;
     margin-bottom: 4rem;
     color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .projects-list {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 5rem;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -22,26 +24,48 @@
     display: flex;
     gap: 3rem;
     align-items: flex-start;
+    padding: 2rem;
+    border-radius: 16px;
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+    /* Prepare for border transition */
+}
+
+/* Hover Effect for the Project Card */
+.project-item:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+    /* Very subtle highlight */
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.08);
 }
 
 .project-image-container {
     flex-shrink: 0;
-    width: 250px;
-    height: 250px;
-    background-color: #f0f5ed;
-    /* Light greenish bg from screenshot */
-    border-radius: 4px;
+    width: 240px;
+    height: 240px;
+    background-color: #fffdfd;
+    /* Keep the greenish tint */
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    /* Ensure image stays within border radius */
+    transition: transform 0.4s ease;
+    padding: 1.5rem;
+    
+}
+
+.project-item:hover .project-image-container {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .project-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 140%;
+    height: 140%;
+    object-fit: contain;
+ 
+    transition: transform 0.5s ease;
 }
 
 .project-details {
@@ -49,12 +73,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 1rem;
-    /* Visual alignment */
+    padding-top: 0.5rem;
 }
 
 .project-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 1rem;
@@ -62,98 +85,102 @@
 
 .project-description {
     font-size: 1.1rem;
-    color: var(--text-primary);
-    line-height: 1.5;
-    margin-bottom: 1rem;
+    color: #d4d4d8;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
 .project-tech {
     display: flex;
-    align-items: baseline;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 0.5rem;
     margin-bottom: 2rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
 .tech-label {
-    color: #3b82f6;
+    color: #f97316;
 
-    font-weight: 500;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
 }
 
 .tech-list {
-    color: var(--text-primary);
+    color: var(--text-secondary);
 }
 
 .project-buttons {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .btn-project {
-    padding: 0.5rem 2rem;
-    border: 1px solid var(--text-primary);
+    padding: 0.6rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
-
     color: var(--text-primary);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
     background: transparent;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .btn-project:hover {
-    background: var(--text-primary);
-    color: var(--bg-color);
-
+    background: #f97316;
+    /* Orange hover */
+    border-color: #f97316;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .project-item {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        /* Center text for better mobile reading */
         gap: 2rem;
         padding: 1.5rem;
-        /* Add padding to card if needed, or around item */
-        background-color: var(--card-bg);
-        /* Maybe add bg for separate feel on mobile? Optional. Let's keep transparent as per design, but maybe add border or just spacing. */
-        border-radius: 12px;
-        /* If bg added */
-        border: 1px solid var(--border-color);
-        /* Add border to separate projects on mobile */
+        background-color: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .project-item:hover {
+        transform: none;
+       
     }
 
     .project-image-container {
         width: 100%;
-        max-width: 100%;
-        /* Create full width image on mobile card */
+        max-width: 400px;
         height: auto;
-        aspect-ratio: 16/9;
-        /* Better for screenshots */
+        aspect-ratio: 4/3;
     }
 
     .project-details {
-        align-items: center;
         width: 100%;
+        align-items: center;
     }
 
     .project-tech {
-        flex-direction: column;
-        gap: 0.5rem;
-        margin-bottom: 1.5rem;
-        align-items: center;
+        justify-content: center;
     }
 
     .project-buttons {
         justify-content: center;
         width: 100%;
+        flex-wrap: wrap;
     }
 
     .btn-project {
         width: 100%;
+        max-width: 180px;
         text-align: center;
-        max-width: 200px;
     }
 }
