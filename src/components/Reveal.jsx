@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-export const Reveal = ({ children, width = "fit-content" }) => {
+export const Reveal = ({ children, width = "fit-content", overflow = "visible" }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.3 }); // Trigger every time, not just once
 
     return (
-        <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+        <div ref={ref} style={{ position: "relative", width, overflow, padding: "0 10px" }}>
             <motion.div
                 variants={{
                     hidden: { opacity: 0, y: 75 },

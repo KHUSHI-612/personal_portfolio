@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const AnimatedText = ({ text, className, hoverColor = "#7f7f7f" }) => {
     return (
-        <div className={className} style={{ display: 'inline-block', overflow: 'hidden' }}>
+        <div className={className} style={{ display: 'inline-block' }}>
             {text.split("").map((char, index) => (
                 <motion.span
                     key={index}

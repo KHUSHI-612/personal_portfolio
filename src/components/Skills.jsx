@@ -40,7 +40,7 @@ const Skills = () => {
         <section id="skills" className="skills-section">
             <div className="container skills-container">
                 <div className="section-header">
-                    <Reveal>
+                    <Reveal width="100%" overflow="visible">
                         <h2 className="section-title">Skills</h2>
                     </Reveal>
                 </div>

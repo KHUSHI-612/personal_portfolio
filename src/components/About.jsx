@@ -11,7 +11,7 @@ const About = () => {
 
                 <div className="about-content-wrapper">
                     <div className="about-text-column">
-                        <Reveal>
+                        <Reveal width="100%" overflow="visible">
                             <AnimatedText text="ABOUT ME" className="about-title" />
                         </Reveal>
 

@@ -27,6 +27,19 @@
     letter-spacing: 2px;
 }
 
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.2rem;
+    }
+}
+
 .email-container-padded {
     padding: 20px;
 

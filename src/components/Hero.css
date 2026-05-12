@@ -70,16 +70,24 @@
 
 @media (max-width: 768px) {
     .hero-container {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
+    }
+
+    .hero-line {
+        justify-content: center !important;
     }
 
     .hero-title {
-        font-size: 15vw;
-    
-        line-height: 0.9;
+        font-size: 13vw;
+        line-height: 1.2;
+        padding-right: 0;
+        text-align: center;
     }
 
     .hero-footer {
-        right: 1.5rem;
+        left: 1.5rem;
+        right: auto;
+        transform: none;
+        bottom: 3rem;
     }
 }

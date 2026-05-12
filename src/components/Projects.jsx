@@ -1,11 +1,19 @@
 import React from 'react';
 import localBuzzImage from '../assets/localbuzz.png';
 import qverseImage from '../assets/qverse.png';
+import spendlensImage from '../assets/spendlens.png';
 import './Projects.css';
 import Reveal from './Reveal';
 
 const Projects = () => {
     const projects = [
+        {
+            title: 'SpendLens',
+            description: 'A free web app that audits AI tool spending for startup engineering teams. It analyzes your stack (Cursor, Copilot, Claude, ChatGPT, etc.), detects plan mismatches and tool overlaps, and surfaces exact dollar savings.',
+            tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Groq (LLama 3.3)'],
+            links: { github: 'https://github.com/KHUSHI-612/spendlens', demo: 'https://spendlens-blush.vercel.app/' },
+            image: spendlensImage
+        },
         {
             title: 'Local Buzz',
             description: 'Local Buzz is a full-stack web application that enables local shop owners to set up and manage their online stores, while customers can browse and purchase products directly from nearby businesses.',
@@ -26,7 +34,7 @@ const Projects = () => {
         <section id="projects" className="projects-section">
             <div className="container">
                 <div className="section-header">
-                    <Reveal>
+                    <Reveal width="100%" overflow="visible">
                         <h2 className="section-title">My Projects</h2>
                     </Reveal>
                 </div>

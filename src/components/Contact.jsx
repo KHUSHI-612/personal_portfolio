@@ -17,7 +17,7 @@ const Contact = () => {
         <section id="contact" className="section contact-section">
             <div className="container contact-container">
                 <div className="section-header">
-                    <Reveal>
+                    <Reveal width="100%" overflow="visible">
                         <h2 className="section-title">Get In Touch</h2>
                     </Reveal>
                 </div>

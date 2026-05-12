@@ -30,7 +30,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container nav-content">
                 <div className="logo-container">
-                 
+
                 </div>
 
                 <div className="mobile-menu-btn" onClick={toggleMobileMenu}>
@@ -56,7 +56,7 @@ const Navbar = () => {
                 </ul>
 
                 <a
-                    href="https://drive.google.com/file/d/13RqWFiIAhqlAEBUVAZatnm4xhx73IK9F/view?usp=sharing"
+                    href="https://drive.google.com/file/d/171DR8umdHc0l-j6DmmANm2HAEeak2GON/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="resume-btn"
